@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        main {
+            padding: 30px;
+            min-height: 100vh;
+            background: linear-gradient(106deg, #F4A764 -2.93%, #FFDEC2 72.14%);
+
+
+        }
+
+
+        .background-0 {
+            background: linear-gradient(106deg, #F4A764 -2.93%, #FFDEC2 72.14%);
+        }
+
+        .background-1 {
+            background: linear-gradient(106deg, #ADB0B0 -2.93%, #E1E1E1 72.14%);
+        }
+
+        .background-2 {
+            background: linear-gradient(106deg, #30A357 -2.93%, #75E39A 72.14%);
+        }
+
+        .background-3 {
+            background: linear-gradient(106deg, #F24F4F -2.93%, #FFA895 72.14%);
+        }
+
+        .navbar-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 20px;
+
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-section img {
+            width: 60px;
+            height: 25px;
+        }
+
+        .anchors-section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        a,
+        button {
+            text-decoration: none;
+            color: black;
+            padding: 8px 16px;
+            transition: background-color 0.3s ease;
+            border-radius: 20px;
+        }
+
+        a.selected {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .main-content {
+            display: flex;
+        }
+
+
+        .details-section {
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+
+
+        .slider-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: 50vw;
+            height: 80vh;
+        }
+
+
+        .splide__slide img {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: xx-large;
+            color: white;
+        }
+
+        h4 {
+            color: black;
+            font-size: large;
+        }
+
+        span {
+            color: white;
+        }
+
+        .price {
+            font-size: xx-large;
+            color: white;
+        }
+
+        .content {
+            width: 75%;
+        }
+
+
+        @media screen and (max-width: 900px) {
+            .main-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .details-section {
+                margin-top: 5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .slider-section {
+
+                width: 100vw;
+                height: auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <nav class="navbar-section">
+            <div class="logo-section">
+                <img src="images/Logo.png" alt="Logo">
+            </div>
+
+            <div class="anchors-section">
+                <a href="#">Shop</a>
+                <a href="#">Brands</a>
+                <a href="#">Contact us</a>
+                <a href="#" class="selected">Sign up</a>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <div class="details-section">
+                <!-- Details will be dynamically added here -->
+            </div>
+
+            <div class="slider-section">
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <!-- Slides will be dynamically added here -->
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const details = {
+                "data": [
+                    {
+                        "id": 0,
+                        "heading": "Exquisite Watches",
+                        "luxury": "Gold Luxury",
+                        "description": "Discover the perfect watch for every occasion and elevate your style with timeless elegance and precision craftsmanship.",
+                        "price": 499,
+                        "img_url": "images/gold.png",
+                        "background_color": "linear-gradient(106deg, #F4A764 -2.93%, #FFDEC2 72.14%)"
+                    },
+                    {
+                        "id": 1,
+                        "heading": "Dainty Timepieces",
+                        "luxury": "Silver Luxury",
+                        "description": "Explore the ideal timepiece for any moment and enhance your style with timeless sophistication and impeccable craftsmanship.",
+                        "price": 469,
+                        "img_url": "images/silver.png",
+                        "background_color": "linear-gradient(106deg, #ADB0B0 -2.93%, #E1E1E1 72.14%)"
+                    },
+                    {
+                        "id": 2,
+                        "heading": "Elegant Timepieces",
+                        "luxury": "Choose Luxury",
+                        "description": "Explore the ideal timepiece for any moment and enhance your style with timeless sophistication and impeccable craftsmanship.",
+                        "price": 529,
+                        "img_url": "images/green.png",
+                        "background_color": "linear-gradient(106deg, #30A357 -2.93%, #75E39A 72.14%);"
+                    },
+                    {
+                        "id": 3,
+                        "heading": "Refined Timepieces",
+                        "luxury": "Choose Luxury",
+                        "description": "Explore the ideal timepiece for any moment and enhance your style with timeless sophistication and impeccable craftsmanship.",
+                        "price": 599,
+                        "img_url": "images/red.png",
+                        "background_color": "linear-gradient(106deg, #F24F4F -2.93%, #FFA895 72.14%);"
+                    }
+                ]
+            }
+
+            let slider = document.querySelector('.splide__list');
+            let detailsSection = document.querySelector('.details-section');
+            let mainContent = document.querySelector('main');
+
+
+            details.data.forEach(each => {
+                let listEl = document.createElement('li');
+                listEl.classList.add("splide__slide");
+
+                let pictureEl = document.createElement('picture');
+
+                let sourceWebp = document.createElement('source');
+                sourceWebp.srcset = `${each.img_url}`;
+                sourceWebp.type = 'image/webp';
+
+                let sourceDefault = document.createElement('source');
+                sourceDefault.srcset = each.img_url;
+
+                let imgEl = document.createElement('img');
+                imgEl.src = each.img_url;
+                imgEl.alt = each.heading;
+
+                pictureEl.appendChild(sourceWebp);
+                pictureEl.appendChild(sourceDefault);
+                pictureEl.appendChild(imgEl);
+
+                listEl.appendChild(pictureEl);
+                slider.appendChild(listEl);
+            });
+
+            let detailsContent = `
+                <h2>${details.data[0].heading}</h2>
+                <h4><span>${details.data[0].luxury}</span>, choose us</h4>
+                <p class="content">${details.data[0].description}</p>
+                <p class="price">$${details.data[0].price}</p>
+            `;
+
+            let detailsContainer = document.createElement('div');
+            detailsContainer.innerHTML = detailsContent;
+            detailsSection.appendChild(detailsContainer);
+
+            var splide = new Splide('.splide', {
+                type: 'fade',
+                heightRatio: 0.5,
+                pagination: false
+            });
+
+            splide.mount();
+
+            splide.on('moved', function (newIndex) {
+                updateDetails(newIndex);
+            });
+
+            function updateDetails(index) {
+                detailsSection.innerHTML = '';
+
+                let selectedDetails = details.data.find(detail => detail.id === index);
+
+                mainContent.className = '';
+                mainContent.classList.add(`background-${selectedDetails.id}`);
+
+                let detailsContent = `
+                    <h2>${selectedDetails.heading}</h2>
+                    <h4><span>${selectedDetails.luxury}</span>, choose us</h4>
+                    <p class="content">${selectedDetails.description}</p>
+                    <p class="price">$${selectedDetails.price}</p>
+                `;
+
+                let detailsContainer = document.createElement('div');
+                detailsContainer.innerHTML = detailsContent;
+                detailsSection.appendChild(detailsContainer);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
